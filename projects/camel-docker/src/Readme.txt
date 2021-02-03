@@ -62,7 +62,7 @@ settings.xml:
         <servers>
                 <server>
                         <username>ndigrazia</username>
-                        <password>NiNa*9850</password>
+                        <password>una_clave</password>
                         <id>docker.io</id>
                         <configuration>
                                 <email>nelson.digrazia@gmail.com</email>
