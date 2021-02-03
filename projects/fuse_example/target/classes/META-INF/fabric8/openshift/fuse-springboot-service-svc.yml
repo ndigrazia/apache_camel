@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    fabric8.io/iconUrl: img/icons/camel.svg
+  labels:
+    app: fuse-springboot
+    expose: "true"
+    provider: fabric8
+    version: 1.0.0-SNAPSHOT
+    group: org.mycompany
+  name: fuse-springboot-service
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: fuse-springboot
+    group: org.mycompany
+    version: 1.0.0-SNAPSHOT
+    provider: fabric8

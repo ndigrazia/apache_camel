@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: fuse-springboot-route
+spec:
+  path: /
+  to:
+    kind: Service
+    name: fuse-springboot-service
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None 

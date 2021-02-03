@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fuse-springboot-deployment
+  labels:
+    app: fuse-springboot
+    group: org.mycompany 
+    version: 1.0.0-SNAPSHOT
+spec:
+  selector:
+    matchLabels:
+      app: fuse-springboot
+      group: org.mycompany
+      version: 1.0.0-SNAPSHOT
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fuse-springboot
+        group: org.mycompany
+        version: 1.0.0-SNAPSHOT
+    spec:
+      containers:
+      - 
+        resources:
+            requests:
+              cpu: "0.2"
+              memory: 256Mi
+            limits:
+              cpu: "1.0"
+              memory: 256Mi
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health
+            port: 8081
+            scheme: HTTP
+          initialDelaySeconds: 180
+          successThreshold: 1
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health
+            port: 8081
+            scheme: HTTP
+          initialDelaySeconds: 10
+          successThreshold: 1
+        securityContext:
+          privileged: false

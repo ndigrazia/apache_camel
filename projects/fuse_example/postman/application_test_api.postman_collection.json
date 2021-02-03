@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "e1bf8f4c-4bd1-4b6f-8bb5-2121111ce442",
+		"name": "Test API Camel ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find all characters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-correlator",
+						"value": "12f6hti677sn346",
+						"type": "text"
+					},
+					{
+						"key": "x-app-client",
+						"value": "222",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get an existing character by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-correlator",
+						"type": "text",
+						"value": "12f6hti677sn346"
+					},
+					{
+						"key": "x-app-client",
+						"type": "text",
+						"value": "222"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/characters/0teUVBC5WU",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"characters",
+						"0teUVBC5WU"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a character",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-correlator",
+						"type": "text",
+						"value": "12f6hti677sn346"
+					},
+					{
+						"key": "x-app-client",
+						"type": "text",
+						"value": "222"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Darth Vader\",\r\n  \"height\": 202,\r\n  \"homeworld\": \"Tatooine\",\r\n  \"starships\": [\r\n    {\r\n      \"name\": \"TIE Advanced x1\",\r\n      \"model\": \"Twin Ion Engine Advanced x1\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

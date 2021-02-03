@@ -1,0 +1,17 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    expose: "true"
+    app: location-soap2rest
+    provider: fabric8
+    version: 1.0.0-SNAPSHOT
+    group: org.mycompany
+  name: location-soap2rest
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: location-soap2rest
